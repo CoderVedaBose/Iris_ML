@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iris Classifier</title>
+    <meta
+      name="description"
+      content="A polished web app for predicting Iris flower species from sepal and petal measurements."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <div class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀️</div>
+
+    <header class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">🌸 Machine Learning • Web App</p>
+          <h1>Predict the Iris flower species in seconds.</h1>
+          <p class="hero-text">
+            This interactive experience uses a Random Forest classifier trained on the classic Iris dataset to identify Setosa, Versicolor, or Virginica from four simple measurements.
+          </p>
+          <div class="hero-actions">
+            <a href="#predictor" class="button primary">Try the predictor</a>
+            <a href="#about" class="button secondary">Learn more</a>
+          </div>
+          <div class="badges">
+            <span>Random Forest</span>
+            <span>Flask</span>
+            <span>Responsive</span>
+            <span>Deployable</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-head">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <div class="hero-card-body">
+            <h3>Model Snapshot</h3>
+            <ul>
+              <li>Dataset: 150 samples</li>
+              <li>Classes: 3 species</li>
+              <li>Accuracy: 96.97%</li>
+              <li>Engine: Random Forest</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="about" class="section-grid">
+        <div class="card">
+          <h2>About the Iris dataset</h2>
+          <p>
+            The Iris dataset is one of the most famous datasets in machine learning. It contains measurements of flower petals and sepals and is commonly used to teach classification models.
+          </p>
+        </div>
+        <div class="card">
+          <h2>How it works</h2>
+          <p>
+            Enter the sepal and petal dimensions in centimeters. The app sends your values to a trained model, which returns a predicted species and confidence score instantly.
+          </p>
+        </div>
+      </section>
+
+      <section id="predictor" class="predictor-card card">
+        <div class="predictor-header">
+          <div>
+            <p class="eyebrow">🧠 Live prediction</p>
+            <h2>Enter flower measurements</h2>
+          </div>
+          <div class="pill">Browser-based • No notebooks</div>
+        </div>
+
+        <form id="predictionForm" class="form-grid">
+          <label>
+            Sepal Length (cm)
+            <input type="number" step="0.1" name="sepal_length" required />
+          </label>
+          <label>
+            Sepal Width (cm)
+            <input type="number" step="0.1" name="sepal_width" required />
+          </label>
+          <label>
+            Petal Length (cm)
+            <input type="number" step="0.1" name="petal_length" required />
+          </label>
+          <label>
+            Petal Width (cm)
+            <input type="number" step="0.1" name="petal_width" required />
+          </label>
+          <button type="submit" class="button primary submit-btn">Predict Species</button>
+        </form>
+
+        <div id="result" class="result-card hidden">
+          <div class="spinner" id="spinner"></div>
+          <div id="resultContent"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Thank You!</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
