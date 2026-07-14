@@ -76,8 +76,9 @@ Everything runs directly inside the browser through a Flask backend.
 ## Live Prediction
 
 <p align="center">
-<img src="docs/screenshots/live-prediction.png" width="100%">
 </p>
+
+![image alt](https://github.com/CoderVedaBose/Iris_ML/blob/a5f8dfa5966f0ea02c9eaccaa38d8eabe8a79560/Screenshot%20(146).png)
 
 ---
 
