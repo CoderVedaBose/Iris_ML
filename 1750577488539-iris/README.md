@@ -67,8 +67,9 @@ Everything runs directly inside the browser through a Flask backend.
 ## Home Page
 
 <p align="center">
-<img src="docs/screenshots/home-hero.png" width="100%">
 </p>
+
+![image alt](https://github.com/CoderVedaBose/Iris_ML/blob/8585cdef34cf16b6e50ef0887c47ec1107f8ebcd/Screenshot%20(145).png)
 
 ---
 
